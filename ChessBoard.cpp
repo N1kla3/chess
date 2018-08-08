@@ -13,8 +13,8 @@ ChessBoard::ChessBoard(){
 		this->board[0][0] = new Rook("R");
 		this->board[0][7] = new Rook("R");
 
-		this->board[0][0] = new Rook("r");
-		this->board[0][0] = new Rook("r");
+		this->board[7][0] = new Rook("r");
+		this->board[7][0] = new Rook("r");
 }
 
 std::string ChessBoard::toString() {
