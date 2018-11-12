@@ -1,6 +1,4 @@
-#include "stdafx.h"
 #include "ChessPiece.h"
-
 
 ChessPiece::ChessPiece(const char* symbol)
 {
