@@ -2,7 +2,7 @@
 #include "Pawn.h"
 
 
-Pawn::Pawn(const char* symbol):ChessPiece(symbol)
+Pawn::Pawn(const char* symbol, bool blocked):ChessPiece(symbol, blocked)
 {
 }
 

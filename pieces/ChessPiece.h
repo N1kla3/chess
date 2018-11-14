@@ -7,7 +7,8 @@ class ChessPiece
 {
 public:
 	const char* symbol;
-	ChessPiece(const char*);
+	bool blocked;
+	ChessPiece(const char*, bool);
 	~ChessPiece();
 	const char* toString();
 };

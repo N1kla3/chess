@@ -13,6 +13,7 @@ class ChessBoard
 {
 public:
 	ChessPiece* board[8][8];
+	void display();
 
 	ChessBoard();
 	~ChessBoard();

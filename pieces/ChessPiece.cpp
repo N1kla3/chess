@@ -1,8 +1,9 @@
 #include "ChessPiece.h"
 
-ChessPiece::ChessPiece(const char* symbol)
+ChessPiece::ChessPiece(const char* symbol, bool blocked)
 {
 	this->symbol = symbol;
+	this->blocked = blocked;
 }
 
 

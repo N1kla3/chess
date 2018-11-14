@@ -4,7 +4,7 @@ class Knight :
 	public ChessPiece
 {
 public:
-	Knight(const char*);
+	Knight(const char*, bool);
 	~Knight();
 };
 
