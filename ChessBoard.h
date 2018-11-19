@@ -14,7 +14,7 @@ class ChessBoard
 public:
 	ChessPiece* board[8][8];
 	void display();
-
+	void block();
 	ChessBoard();
 	~ChessBoard();
 	std::string toString();
