@@ -2,7 +2,7 @@
 #include "King.h"
 
 
-King::King(const char* symbol , bool blocked):ChessPiece(symbol, blocked)
+King::King(const char* symbol , bool blocked, string side):ChessPiece(symbol, blocked, side)
 {
 }
 
