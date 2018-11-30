@@ -9,6 +9,8 @@ class Bishop :
 public:
 	Bishop(const char*, bool, string);
 	virtual void canMove(int, int, ChessBoard*)override;
+private:
+    void oneDirection(int, int, int, ChessBoard*);
 	~Bishop();
 };
 
