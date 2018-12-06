@@ -10,7 +10,7 @@ class ChessPiece
 public:
 	const char* symbol;
 	bool blocked;
-	const string* side;
+    const string* side;
 	ChessPiece(bool, const string&);
 	~ChessPiece();
 	const char* toString();
