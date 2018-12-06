@@ -2,9 +2,9 @@
 #include "../ChessBoard.h"
 
 
-Bishop::Bishop(const char * symbol, bool blocked, string side):ChessPiece(symbol, blocked, side)
+Bishop::Bishop(bool blocked, string side):ChessPiece(blocked, side)
 {
-
+    symbol = "B";
 }
 
 
@@ -21,8 +21,6 @@ Bishop::~Bishop()
  void Bishop::oneDirection(int i, int j, int direction, ChessBoard* rboard){
     int a = i;
     int b = j;
-    const int BOARDMIN = 0;
-    const int BOARDMAX = 7;
 
     while(((a >= BOARDMIN) && (a <= BOARDMAX)) && ((b >= BOARDMIN) && (b <= BOARDMAX))){
 
@@ -52,7 +50,8 @@ Bishop::~Bishop()
             }
         }
 
-        if((a > 7) || (b > 7) || (b < 0) ||(a < 0)|| (rboard->board[a][b]->side == rboard->board[i][j]->side)){
+        if((a > BOARDMAX) || (b > BOARDMAX) || (b < BOARDMIN) ||(a < BOARDMIN)||
+                                                    (rboard->board[a][b]->side == rboard->board[i][j]->side)){
             break;
         }
         rboard->board[a][b]->blocked = true;

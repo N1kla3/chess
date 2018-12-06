@@ -7,58 +7,45 @@ using namespace std;
 ChessBoard::ChessBoard(){
 
 
-		for (int i = 0; i < MAXLENGTH; i++) {
-			for (int j = 0; j < MAXLENGTH; j++) {
-				this->board[i][j] = new ChessPiece(" ", false, "empty");
+		for (int i = 0; i < BOARD_LENGTH; i++) {
+			for (int j = 0; j < BOARD_HEIGHT; j++) {
+				this->board[i][j] = new ChessPiece(false, "empty");
 			}
 		}
 
-		this->board[0][0] = new Rook("R", false, "black");
-		this->board[0][7] = new Rook("R", false, "black");
-		this->board[7][0] = new Rook("R", false, "white");
-		this->board[7][7] = new Rook("R", false, "white");
+		this->board[0][0] = new Rook(false, "black");
+		this->board[0][7] = new Rook(false, "black");
+		this->board[7][0] = new Rook(false, "white");
+		this->board[7][7] = new Rook(false, "white");
 
-		this->board[0][1] = new Knight("K", false, "black");
-		this->board[0][6] = new Knight("K", false, "black");
-		this->board[7][1] = new Knight("K", false, "white");
-		this->board[7][6] = new Knight("K", false, "white");
+		this->board[0][1] = new Knight(false, "black");
+		this->board[0][6] = new Knight(false, "black");
+		this->board[7][1] = new Knight(false, "white");
+		this->board[7][6] = new Knight(false, "white");
 
-		this->board[0][2] = new Bishop("B", false, "black");
-		this->board[0][5] = new Bishop("B", false, "black");
-		this->board[7][2] = new Bishop("B", false, "white");
-		this->board[7][5] = new Bishop("B", false, "white");
+		this->board[0][2] = new Bishop(false, "black");
+		this->board[0][5] = new Bishop(false, "black");
+		this->board[7][2] = new Bishop(false, "white");
+		this->board[7][5] = new Bishop(false, "white");
+		this->board[0][4] = new King(false, "black");
+		this->board[7][4] = new King(false, "white");
 
-		this->board[0][4] = new King("@", false, "black");
-		this->board[7][4] = new King("@", false, "white");
+		this->board[0][3] = new Queen(false, "black");
+		this->board[7][3] = new Queen(false, "white");
 
-		this->board[0][3] = new Queen("Q", false, "black");
-		this->board[7][3] = new Queen("Q", false, "white");
-
-		this->board[1][0] = new Pawn("P", false, "black");
-		this->board[1][1] = new Pawn("P", false, "black");
-		this->board[1][2] = new Pawn("P", false, "black");
-		this->board[1][3] = new Pawn("P", false, "black");
-		this->board[1][4] = new Pawn("P", false, "black");
-		this->board[1][5] = new Pawn("P", false, "black");
-		this->board[1][6] = new Pawn("P", false, "black");
-		this->board[1][7] = new Pawn("P", false, "black");
-		this->board[6][0] = new Pawn("P", false, "white");
-		this->board[6][1] = new Pawn("P", false, "white");
-		this->board[6][2] = new Pawn("P", false, "white");
-		this->board[6][3] = new Pawn("P", false, "white");
-		this->board[6][4] = new Pawn("P", false, "white");
-		this->board[6][5] = new Pawn("P", false, "white");
-		this->board[6][6] = new Pawn("P", false, "white");
-		this->board[6][7] = new Pawn("P", false, "white");
+		for(int i = 0;i < BOARD_HEIGHT;i++){
+            this->board[1][i] = new Pawn(false, "black");
+            this->board[6][i] = new Pawn(false, "white");
+		}
 
 }
 
 std::string ChessBoard::toString() {
 	string result = "";
 
-	for (int i = 0; i < 8; i++)
+	for (int i = 0; i < BOARD_LENGTH; i++)
 	{
-		for (int j = 0; j < 8; j++) {
+		for (int j = 0; j < BOARD_HEIGHT; j++) {
 			result += this->board[i][j]->symbol;
 			
 		}
@@ -68,10 +55,10 @@ std::string ChessBoard::toString() {
 	return result;
 
 }void ChessBoard::display(){      //display a board
-    for (int i = 0; i < 8; i++)
+    for (int i = 0; i < BOARD_LENGTH; i++)
     {	cout <<"---------------------------------\n| ";
 
-        for (int j = 0; j < 8; j++) {
+        for (int j = 0; j < BOARD_HEIGHT; j++) {
             cout << this->board[i][j]->symbol << " | ";
         }
 		cout << i << endl;
@@ -81,10 +68,12 @@ std::string ChessBoard::toString() {
 }
 //method that make variable "blocked" equals false
 void ChessBoard::block(){
-    for(int i = 0;i < 8; i++){
-        for(int j = 0;j < 8; j++){
+    for(int i = 0;i < BOARD_LENGTH; i++){
+        for(int j = 0;j < BOARD_HEIGHT; j++){
             this->board[i][j]->blocked = false;
         }
+
+
     }
 
 }

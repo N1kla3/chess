@@ -2,9 +2,9 @@
 #include "Knight.h"
 
 
-Knight::Knight(const char* symbol, bool blocked, string side) : ChessPiece(symbol, blocked, side)
+Knight::Knight(bool blocked, string side) : ChessPiece(blocked, side)
 {
-
+    symbol = "K";
 }
 
 
