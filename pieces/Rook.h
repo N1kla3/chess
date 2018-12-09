@@ -4,7 +4,7 @@ class Rook :
 	public ChessPiece
 {
 public:
-	Rook(bool, string);
+	Rook(bool, const string&);
 	~Rook();
 };
 

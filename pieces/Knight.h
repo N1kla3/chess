@@ -4,7 +4,7 @@ class Knight :
 	public ChessPiece
 {
 public:
-	Knight(bool, string);
+	Knight(bool, const string&);
 	~Knight();
 };
 

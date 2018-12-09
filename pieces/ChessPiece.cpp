@@ -2,11 +2,11 @@
 #include <iostream>
 
 
-ChessPiece::ChessPiece(bool blocked, string side)
+ChessPiece::ChessPiece(bool blocked, const string& side)
 {
 	symbol = " ";
 	this->blocked = blocked;
-    this->side = side;
+    this->side = &side;
 
 }
 

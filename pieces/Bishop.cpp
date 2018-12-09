@@ -2,7 +2,7 @@
 #include "../ChessBoard.h"
 
 
-Bishop::Bishop(bool blocked, string side):ChessPiece(blocked, side)
+Bishop::Bishop(bool blocked, const string& side):ChessPiece(blocked, side)
 {
     symbol = "B";
 }
