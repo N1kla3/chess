@@ -11,7 +11,7 @@ public:
 	const char* symbol;
 	bool blocked;
 	const string* side;
-	ChessPiece(bool, const string&);
+	ChessPiece(const string&);
 	~ChessPiece();
 	const char* toString();
     virtual void canMove(int i, int j, ChessBoard* rboard);

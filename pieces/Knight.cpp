@@ -2,7 +2,7 @@
 #include "Knight.h"
 
 
-Knight::Knight(bool blocked, const string& side) : ChessPiece(blocked, side)
+Knight::Knight(const string& side) : ChessPiece(side)
 {
     symbol = "K";
 }

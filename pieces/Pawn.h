@@ -4,7 +4,7 @@ class Pawn :
 	public ChessPiece
 {
 public:
-	Pawn(bool, const string&);
+	Pawn(const string&);
 	~Pawn();
 };
 

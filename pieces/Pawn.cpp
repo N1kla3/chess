@@ -2,7 +2,7 @@
 #include "Pawn.h"
 
 
-Pawn::Pawn(bool blocked, const string& side):ChessPiece(blocked, side)
+Pawn::Pawn(const string& side):ChessPiece(side)
 {
     symbol = "P";
 }
