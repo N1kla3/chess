@@ -2,9 +2,9 @@
 #include "Rook.h"
 
 
-Rook::Rook(const char* symbol, bool blocked, string side) : ChessPiece(symbol, blocked, side)
+Rook::Rook(const string& side) : ChessPiece(side)
 {
-
+    symbol = "R";
 }
 
 

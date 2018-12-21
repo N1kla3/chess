@@ -12,7 +12,9 @@
 class ChessBoard
 {
 public:
-	ChessPiece* board[8][8];
+    static const int BOARD_LENGTH = 8;
+    static const int BOARD_HEIGHT = 8;
+    ChessPiece* board[BOARD_LENGTH][BOARD_HEIGHT];
 	void display();
 	void block();
 	ChessBoard();

@@ -1,11 +1,13 @@
 #include "ChessPiece.h"
 #include <iostream>
 
-ChessPiece::ChessPiece(const char* symbol, bool blocked, string side)
+
+ChessPiece::ChessPiece(const string& side)
 {
-	this->symbol = symbol;
-	this->blocked = blocked;
-	this->side = side;
+	symbol = " ";
+	blocked = false;
+    this->side = &side;
+
 }
 
 

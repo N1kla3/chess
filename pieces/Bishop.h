@@ -7,8 +7,12 @@ class Bishop :
 	public ChessPiece
 {
 public:
-	Bishop(const char*, bool, string);
+	const int BOARDMIN = 0;
+	const int BOARDMAX = 7;
+	Bishop(const string&);
 	virtual void canMove(int, int, ChessBoard*)override;
+private:
+    void oneDirection(int, int, int, ChessBoard*);
 	~Bishop();
 };
 
