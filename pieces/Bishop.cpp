@@ -23,7 +23,7 @@ Bishop::~Bishop()
     int a = i;
     int b = j;
 
-    while(((a >= BOARDMIN) && (a <= BOARDMAX)) && ((b >= BOARDMIN) && (b <= BOARDMAX))){
+    while(((a >= 0) && (a < rboard->BOARD_LENGTH)) && ((b >= 0) && (b < rboard->BOARD_LENGTH))){
 
         switch (direction){
             case 1: {
@@ -51,7 +51,7 @@ Bishop::~Bishop()
             }
         }
 
-        if((a > BOARDMAX) || (b > BOARDMAX) || (b < BOARDMIN) ||(a < BOARDMIN)||
+        if((a >= rboard->BOARD_LENGTH) || (b >= rboard->BOARD_LENGTH) || (b < 0) ||(a < 0)||
                                                     (rboard->board[a][b]->side == rboard->board[i][j]->side)){
             break;
         }

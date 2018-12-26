@@ -7,8 +7,6 @@ class Bishop :
 	public ChessPiece
 {
 public:
-	const int BOARDMIN = 0;
-	const int BOARDMAX = 7;
 	Bishop(const string&);
 	virtual void canMove(int, int, ChessBoard*)override;
 private:
