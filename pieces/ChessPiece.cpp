@@ -5,7 +5,6 @@
 ChessPiece::ChessPiece(const string& side)
 {
 	symbol = " ";
-	blocked = false;
     this->side = &side;
 
 }

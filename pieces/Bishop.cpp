@@ -1,11 +1,11 @@
 #include "Bishop.h"
 #include "../ChessBoard.h"
+#include "iostream"
 
 
 Bishop::Bishop(const string& side):ChessPiece(side)
 {
     symbol = "B";
-    blocked = false;
 }
 
 
@@ -55,7 +55,7 @@ Bishop::~Bishop()
                                                     (rboard->board[a][b]->side == rboard->board[i][j]->side)){
             break;
         }
-        rboard->board[a][b]->blocked = true;
+        cout << a << " " << b << endl;
         if (strncmp(rboard->board[a][b]->symbol, " ", 1) != 0){
             break;
         }

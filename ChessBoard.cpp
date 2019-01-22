@@ -66,17 +66,7 @@ std::string ChessBoard::toString() {
     cout << "---------------------------------\n";
     cout << "  0   1   2   3   4   5   6   7  \n\n";
 }
-//method that make variable "blocked" equals false
-void ChessBoard::block(){
-    for(int i = 0;i < BOARD_LENGTH; i++){
-        for(int j = 0;j < BOARD_HEIGHT; j++){
-            this->board[i][j]->blocked = false;
-        }
 
-
-    }
-
-}
 ChessBoard::~ChessBoard(){
  
 }

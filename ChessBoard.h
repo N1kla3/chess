@@ -16,7 +16,6 @@ public:
     static const int BOARD_HEIGHT = 8;
     ChessPiece* board[BOARD_LENGTH][BOARD_HEIGHT];
 	void display();
-	void block();
 	ChessBoard();
 	~ChessBoard();
 	std::string toString();
