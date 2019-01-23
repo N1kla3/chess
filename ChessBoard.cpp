@@ -9,11 +9,11 @@ ChessBoard::ChessBoard(){
 
 		for (int i = 0; i < BOARD_LENGTH; i++) {
 			for (int j = 0; j < BOARD_HEIGHT; j++) {
-				this->board[i][j] = new ChessPiece("empty");
+				this->board[i][j] = nullptr;
 			}
 		}
 
-		this->board[0][0] = new Rook("black");
+	/*	this->board[0][0] = new Rook("black");
 		this->board[0][7] = new Rook("black");
 		this->board[7][0] = new Rook("white");
 		this->board[7][7] = new Rook("white");
@@ -22,12 +22,12 @@ ChessBoard::ChessBoard(){
 		this->board[0][6] = new Knight("black");
 		this->board[7][1] = new Knight("white");
 		this->board[7][6] = new Knight("white");
-
+	*/
 		this->board[0][2] = new Bishop("black");
 		this->board[0][5] = new Bishop("black");
 		this->board[7][2] = new Bishop("white");
 		this->board[7][5] = new Bishop("white");
-		this->board[0][4] = new King("black");
+	/*	this->board[0][4] = new King("black");
 		this->board[7][4] = new King("white");
 
 		this->board[0][3] = new Queen("black");
@@ -37,7 +37,7 @@ ChessBoard::ChessBoard(){
             this->board[1][i] = new Pawn("black");
             this->board[6][i] = new Pawn("white");
 		}
-
+	*/
 }
 
 std::string ChessBoard::toString() {
@@ -59,7 +59,11 @@ std::string ChessBoard::toString() {
     {	cout <<"---------------------------------\n| ";
 
         for (int j = 0; j < BOARD_HEIGHT; j++) {
+        	if(this->board[i][j] == nullptr){
+        		cout << "  | ";
+        	}else{
             cout << this->board[i][j]->symbol << " | ";
+        	}
         }
 		cout << i << endl;
     }

@@ -13,6 +13,6 @@ public:
 	ChessPiece(const string&);
 	~ChessPiece();
 	const char* toString();
-    virtual void canMove(int i, int j, ChessBoard* rboard);
+    virtual void canMove(int i, int j, ChessBoard* rboard) = 0;
 };
 

@@ -51,12 +51,16 @@ Bishop::~Bishop()
             }
         }
 
-        if((a >= rboard->BOARD_LENGTH) || (b >= rboard->BOARD_LENGTH) || (b < 0) ||(a < 0)||
-                                                    (rboard->board[a][b]->side == rboard->board[i][j]->side)){
+        if((a >= rboard->BOARD_LENGTH) || (b >= rboard->BOARD_LENGTH) || (b < 0) ||(a < 0)){
             break;
         }
-        cout << a << " " << b << endl;
-        if (strncmp(rboard->board[a][b]->symbol, " ", 1) != 0){
+        if((rboard->board[a][b] != nullptr) && (rboard->board[i][j] != nullptr)){
+            if((rboard->board[a][b]->side == rboard->board[i][j]->side)){
+                break;
+            }
+        }
+        cout << a << " " << b << endl;      //coment for me-----------
+        if (rboard->board[a][b] != nullptr){
             break;
         }
     }
