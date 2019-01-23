@@ -2,7 +2,7 @@
 #include "Queen.h"
 
 
-Queen::Queen(const string& side):ChessPiece(side)
+Queen::Queen(bool side):ChessPiece(side)
 {
     symbol = "Q";
 }

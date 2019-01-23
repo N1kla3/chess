@@ -2,7 +2,7 @@
 #include <iostream>
 
 
-ChessPiece::ChessPiece(const string& side)
+ChessPiece::ChessPiece(bool side)
 {
 	symbol = " ";
     this->side = &side;

@@ -9,8 +9,8 @@ class ChessPiece
 {
 public:
 	const char* symbol;
-	const string* side;
-	ChessPiece(const string&);
+    bool side;//TRUE - white, FALSE - black
+	ChessPiece(bool);
 	~ChessPiece();
 	const char* toString();
     virtual void canMove(int i, int j, ChessBoard* rboard) = 0;

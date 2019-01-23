@@ -23,10 +23,10 @@ ChessBoard::ChessBoard(){
 		this->board[7][1] = new Knight("white");
 		this->board[7][6] = new Knight("white");
 	*/
-		this->board[0][2] = new Bishop("black");
-		this->board[0][5] = new Bishop("black");
-		this->board[7][2] = new Bishop("white");
-		this->board[7][5] = new Bishop("white");
+		this->board[0][2] = new Bishop(false);
+		this->board[0][5] = new Bishop(false);
+		this->board[7][2] = new Bishop(true);
+		this->board[7][5] = new Bishop(true);
 	/*	this->board[0][4] = new King("black");
 		this->board[7][4] = new King("white");
 

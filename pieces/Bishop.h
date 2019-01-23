@@ -7,7 +7,7 @@ class Bishop :
 	public ChessPiece
 {
 public:
-	Bishop(const string&);
+	Bishop(bool);
 	virtual void canMove(int, int, ChessBoard*)override;
 private:
     void oneDirection(int, int, int, ChessBoard*);

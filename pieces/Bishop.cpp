@@ -3,7 +3,7 @@
 #include "iostream"
 
 
-Bishop::Bishop(const string& side):ChessPiece(side)
+Bishop::Bishop(bool side):ChessPiece(side)
 {
     symbol = "B";
 }
@@ -12,7 +12,7 @@ Bishop::Bishop(const string& side):ChessPiece(side)
 Bishop::~Bishop()
 {
 }
-//that override function make squares, that bishop can move, became TRUE
+//function writes number of squares which figure can move
  void Bishop::canMove(int i, int j, ChessBoard* rboard){
     Bishop::oneDirection(i, j, 1, rboard);
     Bishop::oneDirection(i, j, 2, rboard);

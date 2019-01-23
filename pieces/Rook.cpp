@@ -2,7 +2,7 @@
 #include "Rook.h"
 
 
-Rook::Rook(const string& side) : ChessPiece(side)
+Rook::Rook(bool side) : ChessPiece(side)
 {
     symbol = "R";
 }
