@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <vector>
 
 class ChessBoard;
 
@@ -13,6 +14,6 @@ public:
 	ChessPiece(bool);
 	~ChessPiece();
 	const char* toString();
-    virtual void canMove(int i, int j, ChessBoard* rboard) = 0;
+    virtual vector<int>* canMove(int i, int j, ChessBoard* rboard) = 0;
 };
 

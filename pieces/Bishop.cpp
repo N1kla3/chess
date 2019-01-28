@@ -1,6 +1,7 @@
 #include "Bishop.h"
 #include "../ChessBoard.h"
 #include "iostream"
+#include <vector>
 
 
 Bishop::Bishop(bool side):ChessPiece(side)
@@ -11,56 +12,62 @@ Bishop::Bishop(bool side):ChessPiece(side)
 
 Bishop::~Bishop()
 {
+
 }
 //function writes number of squares which figure can move
- void Bishop::canMove(int i, int j, ChessBoard* rboard){
-    Bishop::oneDirection(i, j, 1, rboard);
-    Bishop::oneDirection(i, j, 2, rboard);
-    Bishop::oneDirection(i, j, 3, rboard);
-    Bishop::oneDirection(i, j, 4, rboard);
+vector<int>* Bishop::canMove(int i, int j, ChessBoard* rboard){
+    vec.clear();
+    Bishop::oneDirection(i, j, RIGHT_DOWN, rboard);
+    Bishop::oneDirection(i, j, LEFT_DOWN, rboard);
+    Bishop::oneDirection(i, j, RIGHT_UP, rboard);
+    Bishop::oneDirection(i, j, LEFT_UP, rboard);
+    return &vec;
 }
- void Bishop::oneDirection(int i, int j, int direction, ChessBoard* rboard){
-    int a = i;
-    int b = j;
+ void Bishop::oneDirection(int i, int j, Direction direction, ChessBoard* rboard){
+    int column = i;
+    int row = j;
 
-    while(((a >= 0) && (a < rboard->BOARD_LENGTH)) && ((b >= 0) && (b < rboard->BOARD_LENGTH))){
+    while(((column >= 0) && (column < rboard->BOARD_LENGTH)) && ((row >= 0) && (row < rboard->BOARD_LENGTH))){
 
         switch (direction){
-            case 1: {
-                a++;
-                b++;
+            case RIGHT_DOWN: {
+
+                column++;
+                row++;
                 break;
             }
-            case 2:{
-                a++;
-                b--;
+            case LEFT_DOWN:{
+                column++;
+                row--;
                 break;
             }
-            case 3:{
-                a--;
-                b++;
+            case RIGHT_UP:{
+                column--;
+                row++;
                 break;
             }
-            case 4:{
-                a--;
-                b--;
+            case LEFT_UP:{
+                column--;
+                row--;
                 break;
             }
             default:{
-                a++;
+                //throw;
             }
+
         }
 
-        if((a >= rboard->BOARD_LENGTH) || (b >= rboard->BOARD_LENGTH) || (b < 0) ||(a < 0)){
+        if((column >= rboard->BOARD_LENGTH) || (row >= rboard->BOARD_LENGTH) || (row < 0) ||(column < 0)){
             break;
         }
-        if((rboard->board[a][b] != nullptr) && (rboard->board[i][j] != nullptr)){
-            if((rboard->board[a][b]->side == rboard->board[i][j]->side)){
+        if((rboard->board[column][row] != nullptr) && (rboard->board[i][j] != nullptr)){
+            if((rboard->board[column][row]->side == rboard->board[i][j]->side)){
                 break;
             }
         }
-        cout << a << " " << b << endl;      //coment for me-----------
-        if (rboard->board[a][b] != nullptr){
+        vec.push_back(column);
+        vec.push_back(row);
+        if (rboard->board[column][row] != nullptr){
             break;
         }
     }

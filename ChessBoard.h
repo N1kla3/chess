@@ -8,7 +8,6 @@
 #include "pieces/Pawn.h"
 
 
-
 class ChessBoard
 {
 public:

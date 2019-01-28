@@ -5,6 +5,8 @@ class Knight :
 {
 public:
 	Knight(bool);
+    vector<int> vec;
+	vector<int>* canMove(int, int, ChessBoard*)override;
 	~Knight();
 };
 
