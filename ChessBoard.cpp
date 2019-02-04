@@ -13,20 +13,20 @@ ChessBoard::ChessBoard(){
 			}
 		}
 
-	/*	this->board[0][0] = new Rook("black");
-		this->board[0][7] = new Rook("black");
-		this->board[7][0] = new Rook("white");
-		this->board[7][7] = new Rook("white");
-    */
-		this->board[0][1] = new Knight(false);
-		this->board[0][6] = new Knight(false);
-		this->board[7][1] = new Knight(true);
-		this->board[7][6] = new Knight(true);
+		this->board[0][0] = new Rook(BLACK);
+		this->board[0][7] = new Rook(BLACK);
+		this->board[7][0] = new Rook(WHITE);
+		this->board[7][7] = new Rook(WHITE);
 
-		this->board[0][2] = new Bishop(false);
-		this->board[0][5] = new Bishop(false);
-		this->board[7][2] = new Bishop(true);
-		this->board[7][5] = new Bishop(true);
+		this->board[0][1] = new Knight(BLACK);
+		this->board[0][6] = new Knight(BLACK);
+		this->board[7][1] = new Knight(WHITE);
+		this->board[7][6] = new Knight(WHITE);
+
+		this->board[0][2] = new Bishop(BLACK);
+		this->board[0][5] = new Bishop(BLACK);
+		this->board[7][2] = new Bishop(WHITE);
+		this->board[7][5] = new Bishop(WHITE);
 
 	/*	this->board[0][4] = new King("black");
 		this->board[7][4] = new King("white");
