@@ -4,7 +4,7 @@ class King :
 	public ChessPiece
 {
 public:
-	King(const string&);
+	King(bool);
 	~King();
 };
 

@@ -4,7 +4,9 @@ class Knight :
 	public ChessPiece
 {
 public:
-	Knight(const string&);
+	Knight(bool);
+    vector<int> vec;
+	vector<int>* canMove(int, int, ChessBoard*)override;
 	~Knight();
 };
 

@@ -8,12 +8,13 @@
 #include "pieces/Pawn.h"
 
 
-
 class ChessBoard
 {
 public:
     static const int BOARD_LENGTH = 8;
     static const int BOARD_HEIGHT = 8;
+    const bool WHITE = true;
+    const bool BLACK = false;
     ChessPiece* board[BOARD_LENGTH][BOARD_HEIGHT];
 	void display();
 	ChessBoard();
