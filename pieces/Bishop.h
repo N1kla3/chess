@@ -12,6 +12,9 @@ public:
 	Bishop(bool);
 	vector<int>* canMove(int, int, ChessBoard*)override;
 private:
+	int column;
+	int row;
+	void checkingInGivenDirection(Direction);
     vector<int> vec;
     void oneDirection(int, int, Direction, ChessBoard*);
 	~Bishop();
